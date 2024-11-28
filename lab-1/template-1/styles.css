@@ -49,5 +49,72 @@ td {
     border-right: none;
 }
 
+.section-navigation {
+    border: 1px solid #ccc;
+}
 
+.section-navigation td {
+    text-align: center;
+    font-weight: bold;
+    border-left: none;
+    border-right: none;
+}
+
+.section-navigation td:first-child {
+    border-left: 1px solid #ccc;
+}
+
+.section-navigation td:last-child {
+    border-right: 1px solid #ccc;
+}
+
+.sidebar {
+    width: 15%;
+    vertical-align: top;
+}
+
+.content {
+    width: 60%;
+    vertical-align: top;
+    height: 700px;
+}
+
+.content-item {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.content-item img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+.trends {
+    width: 25%;
+    vertical-align: top;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
