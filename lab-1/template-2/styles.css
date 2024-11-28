@@ -192,38 +192,4 @@ body {
     .buy-button {
         margin-top: 10px;
     }
-
-    @media (min-width: 1440px) {
-        .main-container {
-            grid-template-columns: 250px calc(100% - 250px - 250px); /* Adjust the grid for widescreens */
-        }
-
-        .product-grid {
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ensure more product cards fit in one row */
-        }
-    }
-}
-
-@media (min-width: 1200px) {
-    .main-container {
-        padding: 30px 50px; /* Increase padding on widescreens */
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Wider cards on widescreens */
-        gap: 30px; /* Increase space between cards */
-    }
-
-    .product-card {
-        padding: 20px; /* Add more padding for a spacious look */
-    }
-
-    .search-container {
-        margin-left: 50px; /* Add more gap for better alignment on widescreens */
-    }
-
-    .cart-button {
-        font-size: 18px; /* Make the cart button larger */
-        padding: 12px 25px;
-    }
 }
