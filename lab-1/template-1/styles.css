@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.logo-cell {
+    padding: 5px;
+}
+
+.logo-wrapper {
+    max-width: 120px;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.logo-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+.search-bar {
+    text-align: right;
+    padding: 25px;
+}
+
+.search-bar input {
+    width: 40%;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.logo-navigation {
+    border: 1px solid #ccc;
+}
+
+.logo-navigation td {
+    border-left: none;
+    border-right: none;
+}
+
+
+
