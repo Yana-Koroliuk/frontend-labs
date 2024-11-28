@@ -15,6 +15,7 @@ td {
 }
 
 .logo-cell {
+    width: auto;
     padding: 5px;
 }
 
@@ -40,16 +41,12 @@ td {
     font-size: 14px;
 }
 
-.logo-navigation {
-    border: 1px solid #ccc;
-}
-
 .logo-navigation td {
     border-left: none;
     border-right: none;
 }
 
-.section-navigation {
+.logo-navigation {
     border: 1px solid #ccc;
 }
 
@@ -58,6 +55,10 @@ td {
     font-weight: bold;
     border-left: none;
     border-right: none;
+}
+
+.section-navigation {
+    border: 1px solid #ccc;
 }
 
 .section-navigation td:first-child {
@@ -77,26 +78,26 @@ td {
     width: 60%;
     vertical-align: top;
     height: 700px;
+    overflow-y: scroll;
+}
+
+.trends {
+    width: 25%;
+    vertical-align: top;
 }
 
 .content-item {
     margin-bottom: 20px;
-    text-align: justify;
+    text-align: center;
 }
 
 .content-item img {
     width: 100%;
     max-width: 600px;
     height: auto;
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
     border: 1px solid #ccc;
     background-color: #f0f0f0;
-}
-
-.trends {
-    width: 25%;
-    vertical-align: top;
 }
 
 ul {
@@ -118,3 +119,86 @@ a:hover {
     text-decoration: underline;
 }
 
+@media screen and (max-width: 768px) {
+    .sidebar,
+    .trends,
+    td.sidebar,
+    td.trends {
+        display: none;
+    }
+
+    tr:nth-child(4) {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+        display: block;
+    }
+
+    td {
+        border: none;
+    }
+
+    .logo-navigation,
+    .section-navigation {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .logo-cell,
+    .search-bar {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .search-bar {
+        padding: 10px;
+    }
+    .search-bar input {
+        width: 80%;
+    }
+
+    .section-navigation td {
+        width: 100%;
+        display: block;
+    }
+    .section-navigation table {
+        width: 100%;
+    }
+    .section-navigation td td {
+        width: 100%;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+    .section-navigation td td a {
+        display: block;
+        padding: 10px;
+    }
+    .section-navigation td td:last-child {
+        border-bottom: none;
+    }
+
+    .content-item img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .sidebar {
+        width: 20%;
+    }
+    .content {
+        width: 60%;
+    }
+    .trends {
+        width: 20%;
+    }
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
