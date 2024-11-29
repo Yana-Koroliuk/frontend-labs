@@ -12,19 +12,18 @@ body {
 
 .header {
     background-color: #ffffff;
-    height: 120px; 
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
+    height: 120px;
     padding: 0 10px;
     border-bottom: 1px solid #ccc;
+    text-align: center;
 }
 
 .logo {
-    max-height: 100px; 
-    max-width: 100%; 
-    object-fit: contain; 
-    display: block; 
+    max-height: 100px;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
 }
 
 .container {
@@ -103,10 +102,36 @@ body {
     margin-bottom: 1rem;
 }
 
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 @media (max-width: 768px) {
-    .main-content, .sidebar {
+    .main-content,
+    .sidebar {
         float: none;
         width: 100%;
         margin-right: 0;
+    }
+
+    .article {
+        display: block;
+    }
+
+    .image-placeholder {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin: 0 0 1rem 0;
+    }
+
+    .article-content {
+        overflow: visible;
+    }
+
+    .logo {
+        margin: 0 auto;
     }
 }
