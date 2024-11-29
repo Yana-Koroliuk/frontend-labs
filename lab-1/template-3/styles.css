@@ -99,3 +99,156 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.feature {
+    flex: 1 1 calc(33.333% - 40px);
+    min-width: 250px;
+    padding: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.features-register-button {
+    width: calc(34% - 20px);
+    margin: 20px auto 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+}
+
+.features-register-button:hover {
+    background-color: #0056b3;
+}
+
+.steps {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+.steps h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.step-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+.step {
+    flex: 0 0 calc((100% - 60px) / 3);
+    min-width: 250px;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.step:nth-child(4) {
+    margin-left: 2px;
+}
+
+.step:nth-child(5) {
+    margin-left: 0;
+}
+
+.steps-register-button {
+    display: block;
+    width: calc((100% - 60px) / 3);
+    min-width: 250px;
+    margin: 20px auto 0;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.steps-register-button:hover {
+    background-color: #0056b3;
+}
+
+.step h3 {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-logo {
+    margin-right: 20px;
+}
+
+.footer-logo .logo {
+    max-width: 160px;
+    height: auto;
+}
+
+.footer-section-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
