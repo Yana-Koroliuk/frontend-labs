@@ -185,14 +185,33 @@ body {
 
     .main-container {
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+        padding: 10px;
     }
 
     .sidebar {
-        display: none;
+        display: block;
+        width: 100%;
+        background-color: #f4f4f4;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        padding: 20px;
+        box-sizing: border-box;
+        order: 1; /* Sidebar is displayed before the product grid */
+    }
+
+    .sidebar ul {
+        padding: 0;
+    }
+
+    .catalog-title {
+        margin-top: 0;
     }
 
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+        order: 2;
     }
 
     .product-image::before {
@@ -213,3 +232,5 @@ body {
         margin-top: 10px;
     }
 }
+
+

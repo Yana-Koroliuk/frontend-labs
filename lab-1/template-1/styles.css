@@ -39,6 +39,8 @@ td {
     width: 40%;
     padding: 5px;
     font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .logo-navigation td {
@@ -78,7 +80,6 @@ td {
     width: 60%;
     vertical-align: top;
     height: 700px;
-    overflow-y: scroll;
 }
 
 .trends {
