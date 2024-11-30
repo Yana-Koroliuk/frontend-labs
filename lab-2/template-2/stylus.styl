@@ -1,0 +1,72 @@
+font-family-base = Arial, sans-serif
+color-border = #ccc
+color-primary = #007bff
+color-primary-dark = #0056b3
+color-bg-light = #f4f4f4
+color-bg-white = #fff
+color-text = #333
+color-text-muted = #888
+font-size-base = 16px
+font-size-sm = 14px
+font-size-md = 18px
+padding-xs = 8px
+padding-sm = 10px
+padding-base = 15px
+padding-md = 20px
+border-radius-base = 5px
+breakpoint-md = 768px
+
+border-radius(n = border-radius-base)
+  border-radius n
+
+reset-list()
+  list-style-type none
+  padding 0
+  margin 0
+
+*
+  box-sizing border-box
+
+body
+  font-family font-family-base
+  margin 0
+  padding 0
+
+.header
+  display grid
+  grid-template-columns 250px 1fr 200px
+  align-items center
+  padding padding-sm padding-md
+  border-bottom 1px solid color-border
+
+  .logo-wrapper
+    max-width 160px
+
+    img
+      max-width 100%
+      height auto
+
+  .search-container
+    display grid
+    align-items center
+    margin-left padding-md
+
+    .search-bar
+      width 100%
+      padding padding-xs
+      font-size font-size-base
+      border 1px solid color-border
+      border-radius()
+
+  .cart-button
+    padding padding-sm padding-md
+    font-size font-size-base
+    cursor pointer
+    background-color color-primary
+    color color-bg-white
+    border none
+    border-radius()
+    justify-self center
+
+    &:hover
+      background-color color-primary-dark
