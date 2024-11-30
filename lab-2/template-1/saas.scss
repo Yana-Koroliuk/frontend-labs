@@ -1,0 +1,59 @@
+$font-family-base: Arial, sans-serif;
+$color-border: #ccc;
+$color-background: #f0f0f0;
+$color-text: #333;
+$font-size-base: 14px;
+$font-size-md: 20px;
+$font-size-lg: 22px;
+$padding-base: 10px;
+$padding-small: 5px;
+$border-radius-base: 4px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 480px;
+
+@mixin border($width: 1px, $style: solid, $color: $color-border) {
+  @if $style == none {
+    border: none;
+  } @else {
+    border: $width $style $color;
+  }
+}
+
+@mixin border-left($width: 1px, $style: solid, $color: $color-border) {
+  @if $style == none {
+    border-left: none;
+  } @else {
+    border-left: $width $style $color;
+  }
+}
+
+@mixin border-right($width: 1px, $style: solid, $color: $color-border) {
+  @if $style == none {
+    border-right: none;
+  } @else {
+    border-right: $width $style $color;
+  }
+}
+
+@mixin border-radius($radius: $border-radius-base) {
+  border-radius: $radius;
+}
+
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == md {
+    @media screen and (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media screen and (max-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+}
+
