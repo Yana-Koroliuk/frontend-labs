@@ -1,0 +1,39 @@
+font-family-base = Arial, sans-serif
+border-color-base = #ccc
+background-color-base = #f0f0f0
+text-color-base = #333
+padding-base = 10px
+padding-small = 5px
+border-radius-base = 4px
+font-size-base = 14px
+font-size-lg = 22px
+font-size-md = 20px
+font-weight-bold = bold
+media-breakpoint-md = 768px
+media-breakpoint-sm = 480px
+
+border(n = 1px, style = solid, color = border-color-base)
+  if style == 0
+    border 0
+  else
+    border n style color
+
+border-left(n = 1px, style = solid, color = border-color-base)
+  if style == none
+    border-left none
+  else
+    border-left n style color
+
+border-right(n = 1px, style = solid, color = border-color-base)
+  if style == none
+    border-right none
+  else
+    border-right n style color
+
+border-radius(n = border-radius-base)
+  border-radius n
+
+reset-list()
+  list-style none
+  padding 0
+  margin 0
