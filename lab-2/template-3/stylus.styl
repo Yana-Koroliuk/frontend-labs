@@ -1,0 +1,267 @@
+font-family-base = Arial, sans-serif
+color-primary = #007bff
+color-primary-dark = #0056b3
+color-bg = #f4f4f4
+color-white = #fff
+color-black = #000
+color-gray = #ccc
+color-gray-dark = #333
+color-gray-light = #888
+
+font-size-base = 16px
+font-size-sm = 14px
+font-size-md = 18px
+font-size-lg = 28px
+font-size-xl = 36px
+font-size-xxl = 48px
+
+padding-xs = 5px
+padding-sm = 10px
+padding-md = 15px
+padding-lg = 20px
+padding-xl = 25px
+padding-xxl = 40px
+
+border-radius-base = 5px
+breakpoint-md = 768px
+breakpoint-sm = 480px
+
+border(direction = 0, n = 1px, style = solid, color = color-gray)
+  if style == 0
+    if direction == 0
+      border none
+    else
+      border-{direction} none
+  else
+    if direction == 0
+      border n style color
+    else
+      border-{direction} n style color
+
+border-radius(n = border-radius-base)
+  border-radius n
+
+flex-center()
+  display flex
+  justify-content center
+  align-items center
+
+reset-list()
+  list-style none
+  padding 0
+  margin 0
+
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+body
+  font-family font-family-base
+  line-height 1.6
+
+a
+  text-decoration none
+  color color-white
+  font-weight bold
+
+ul
+  reset-list()
+
+// Header
+.header
+  display flex
+  justify-content space-between
+  align-items center
+  padding padding-sm padding-lg
+  border(bottom)
+
+  .logo-wrapper
+    max-width 120px
+    height auto
+
+  .register-button
+    padding padding-md padding-xl
+    font-size font-size-base
+    background-color color-primary
+    color color-white
+    border(0, 0)
+    border-radius()
+    cursor pointer
+
+    &:hover
+      background-color color-primary-dark
+
+.hero
+  padding 0
+  background-color color-bg
+  display flex
+  align-items stretch
+  min-height 500px
+
+  .hero-container
+    display flex
+    flex 1
+
+    .hero-text
+      flex 1
+      display flex
+      flex-direction column
+      justify-content space-between
+      padding padding-xxl
+      text-align left
+
+      h1
+        font-size font-size-xxl
+        font-weight bold
+        margin-bottom padding-lg
+
+      p
+        font-size font-size-md
+        margin-bottom padding-xl
+
+      .hero-register-button
+        width 50%
+        padding padding-md
+        font-size font-size-md
+        background-color color-primary
+        color color-white
+        border(0, 0)
+        border-radius()
+        cursor pointer
+        align-self flex-start
+
+        &:hover
+          background-color color-primary-dark
+
+    .hero-image
+      flex 1
+      display flex
+      justify-content center
+      align-items center
+      overflow hidden
+
+      img
+        width 100%
+        height 100%
+        object-fit cover
+
+.features
+  display flex
+  flex-wrap wrap
+  justify-content center
+  gap padding-lg
+  padding padding-xxl padding-lg
+  background-size cover
+  background-position center
+
+  .feature
+    flex 1 1 calc(33.333% - 40px)
+    min-width 250px
+    padding padding-lg
+    color color-white
+    background-color rgba(0, 0, 0, 0.5)
+    border-radius()
+    text-align center
+
+  .features-register-button
+    width calc(34% - 20px)
+    margin padding-lg auto 0
+    padding padding-sm padding-md
+    font-size font-size-base
+    background-color color-primary
+    color color-white
+    border(0, 0)
+    border-radius()
+    cursor pointer
+    text-align center
+    display block
+
+    &:hover
+      background-color color-primary-dark
+
+.steps
+  text-align center
+  padding padding-xxl padding-lg
+  background-color color-bg
+
+  h2
+    font-size font-size-lg
+    margin-bottom padding-xxl
+
+  .step-list
+    display flex
+    flex-wrap wrap
+    gap 25px
+    justify-content flex-start
+
+    .step
+      flex 0 0 calc((100% - 60px) / 3)
+      min-width 250px
+      box-sizing border-box
+      padding padding-lg
+      border()
+      border-radius()
+      background-color color-white
+      text-align center
+
+      &:nth-child(4)
+        margin-left 2px
+
+      &:nth-child(5)
+        margin-left 0
+
+      h3
+        font-size font-size-xl
+        color color-primary
+        margin-bottom padding-sm
+
+  .steps-register-button
+    display block
+    width calc((100% - 60px) / 3)
+    min-width 250px
+    margin padding-lg auto 0
+    padding padding-md
+    font-size font-size-md
+    background-color color-primary
+    color color-white
+    border(0, 0)
+    border-radius()
+    cursor pointer
+    text-align center
+
+    &:hover
+      background-color color-primary-dark
+
+.footer
+  display flex
+  justify-content space-between
+  align-items flex-start
+  padding padding-lg
+  background-color color-gray-dark
+  color color-white
+
+  .footer-logo
+    margin-right padding-lg
+
+    .logo
+      max-width 160px
+      height auto
+
+  .footer-section-wrapper
+    display flex
+    justify-content space-around
+    gap padding-lg
+    flex-grow 1
+
+    .footer-section
+      display flex
+      flex-direction column
+      align-items flex-start
+
+      .footer-list
+        reset-list()
+
+        li
+          margin-bottom padding-xs
+
