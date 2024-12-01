@@ -70,3 +70,98 @@ body
 
     &:hover
       background-color color-primary-dark
+
+.main-container
+  display grid
+  grid-template-columns 250px calc(100% - 250px - 220px)
+  gap padding-md
+  padding padding-md
+
+  .sidebar
+    background-color color-bg-light
+    padding padding-md
+    border 1px solid color-border
+    width 250px
+    box-sizing border-box
+
+    ul
+      reset-list()
+
+    .catalog-title
+      font-size font-size-md
+      font-weight bold
+      margin-bottom padding-md
+
+    li
+      margin-bottom 10px
+
+    a
+      text-decoration none
+      color color-text
+      font-size font-size-base
+
+      &:hover
+        text-decoration underline
+
+  .product-grid
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(250px, 1fr))
+    gap padding-md
+
+    .product-card
+      display grid
+      grid-template-rows auto 1fr auto
+      background-color color-bg-white
+      border 1px solid color-border
+      border-radius()
+      padding padding-base
+
+      .product-image
+        position relative
+        width 100%
+        overflow hidden
+
+        &::before
+          content ''
+          display block
+          padding-top 100%
+
+        img
+          position absolute
+          top 0
+          left 0
+          width 100%
+          height 100%
+          object-fit cover
+          display block
+
+      .product-info
+        display grid
+        grid-template-columns 1fr auto
+        align-items center
+        margin-top padding-xs
+
+        .product-details
+          display grid
+          grid-template-rows auto auto
+
+          .product-name
+            font-size font-size-base
+            font-weight bold
+
+          .product-price
+            font-size font-size-sm
+            color color-text-muted
+
+      .buy-button
+        background-color color-primary
+        color color-bg-white
+        padding padding-sm
+        border none
+        border-radius()
+        cursor pointer
+        font-size font-size-sm
+        justify-self end
+
+        &:hover
+          background-color color-primary-dark
