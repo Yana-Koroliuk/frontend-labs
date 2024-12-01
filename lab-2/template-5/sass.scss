@@ -1,0 +1,274 @@
+$font-family-base: Arial, sans-serif;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray-light: #f4f4f4;
+$color-gray: #ccc;
+$color-gray-dark: #333;
+$color-blue: #007bff;
+$color-blue-dark: #0056b3;
+$color-gray-background: #e0e0e0;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$padding-xs: 8px;
+$padding-sm: 10px;
+$padding-md: 20px;
+$padding-lg: 50px;
+$border-radius-base: 5px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 480px;
+
+@mixin border-radius($radius: $border-radius-base) {
+  border-radius: $radius;
+}
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $padding-md;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    padding-top: $padding-lg;
+    gap: $padding-md;
+
+    .logo-image {
+      width: 130px;
+      height: 150px;
+      border: 1px solid $color-black;
+    }
+
+    .logo-text {
+      text-align: left;
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  text-align: center;
+  padding-bottom: $padding-md;
+
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: $padding-md;
+    margin: $padding-md 0;
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: $padding-md;
+      border: 1px solid $color-gray;
+      padding: $padding-md;
+      text-align: left;
+      width: 500px;
+
+      .feature-image {
+        width: 150px;
+        height: 150px;
+        background-color: $color-gray-background;
+        border: 1px solid $color-gray;
+      }
+
+      .feature-text {
+        flex: 1;
+      }
+    }
+  }
+
+  .subscription {
+    display: flex;
+    justify-content: center;
+    gap: $padding-sm;
+    margin-top: $padding-md;
+
+    input {
+      padding: $padding-sm;
+      width: 300px;
+      border: 1px solid $color-gray;
+      @include border-radius();
+    }
+
+    button {
+      padding: $padding-sm $padding-md;
+      border: none;
+      background-color: $color-blue;
+      color: $color-white;
+      @include border-radius();
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-blue-dark;
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: $padding-md;
+  background-color: $color-gray-light;
+  border-top: 1px solid $color-gray;
+  width: 100%;
+
+  .footer-list {
+    @include reset-list();
+
+    li {
+      margin-bottom: $padding-sm;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+  font-weight: bold;
+}
+
+@include respond-to($breakpoint-md) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding-top: $padding-lg;
+
+    .logo-container {
+      flex-direction: column;
+      align-items: center;
+      gap: $padding-sm;
+
+      .logo-image {
+        width: 100px;
+        height: auto;
+      }
+    }
+  }
+
+  .main-content {
+    .features {
+      flex-direction: column;
+      gap: $padding-md;
+
+      .feature {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+
+        .feature-image {
+          width: 100px;
+          height: 100px;
+        }
+
+        .feature-text {
+          text-align: center;
+        }
+      }
+    }
+
+    .subscription {
+      flex-direction: column;
+      gap: $padding-sm;
+
+      input {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      button {
+        width: 100%;
+        max-width: 150px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: $padding-md;
+
+    .footer-list {
+      text-align: center;
+    }
+  }
+}
+
+@include respond-to($breakpoint-sm) {
+  .header {
+    .logo-container {
+      .logo-image {
+        width: 80px;
+      }
+    }
+  }
+
+  .main-content {
+    .features {
+      .feature {
+        .feature-image {
+          width: 80px;
+          height: 80px;
+        }
+
+        .feature-text {
+          font-size: $font-size-sm;
+        }
+      }
+    }
+
+    .subscription {
+      input {
+        font-size: $font-size-sm;
+        padding: $padding-xs;
+      }
+
+      button {
+        font-size: $font-size-sm;
+        padding: $padding-xs;
+      }
+    }
+  }
+
+  .footer {
+    .footer-list {
+      li {
+        font-size: $font-size-sm;
+      }
+    }
+  }
+}
