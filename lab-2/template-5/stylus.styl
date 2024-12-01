@@ -1,0 +1,207 @@
+font-family-base = Arial, sans-serif
+color-black = #000
+color-gray = #ccc
+color-gray-light = #f4f4f4
+color-bg = #ffffff
+color-primary = #007bff
+color-primary-dark = #0056b3
+font-size-sm = 20px
+font-size-m = 14px
+padding-xs = 10px
+padding-sm = 20px
+padding-md = 50px
+border-radius-base = 5px
+breakpoint-md = 768px
+breakpoint-sm = 480px
+
+border-radius(n = border-radius-base)
+  border-radius n
+
+flex-center()
+  display flex
+  justify-content center
+  align-items center
+
+reset-list()
+  list-style none
+  padding 0
+  margin 0
+
+
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+html, body
+  height 100%
+
+body
+  font-family font-family-base
+  line-height 1.6
+  display flex
+  flex-direction column
+
+a
+  text-decoration none
+  color color-black
+  font-weight bold
+
+.header
+  flex-center()
+  padding padding-sm
+
+.logo-container
+  flex-center()
+  gap padding-sm
+  padding-top padding-md
+
+  .logo-image
+    width 130px
+    height 150px
+    border 1px solid color-black
+
+  .logo-text
+    text-align left
+
+.main-content
+  flex 1
+  text-align center
+  padding-bottom padding-sm
+
+.features
+  flex-center()
+  gap padding-sm
+  margin padding-sm 0
+
+.feature
+  flex-center()
+  gap padding-sm
+  border 1px solid color-gray
+  padding padding-sm
+  text-align left
+  width 500px
+
+  .feature-image
+    width 150px
+    height 150px
+    background-color color-gray-light
+    border 1px solid color-gray
+
+  .feature-text
+    flex 1
+
+.subscription
+  flex-center()
+  gap padding-xs
+  margin-top padding-sm
+
+  input
+    padding padding-xs
+    width 300px
+    border 1px solid color-gray
+    border-radius()
+
+  button
+    padding padding-xs padding-sm
+    border none
+    background-color color-primary
+    color color-bg
+    border-radius()
+    cursor pointer
+
+    &:hover
+      background-color color-primary-dark
+
+.footer
+  display: flex;
+  justify-content space-around
+  padding padding-sm
+  background-color color-gray-light
+  border-top 1px solid color-gray
+  width 100%
+
+  .footer-list
+    reset-list()
+
+    li
+      margin-bottom padding-xs
+
+@media (max-width: breakpoint-md)
+  .header
+    flex-direction column
+    text-align center
+    padding-top padding-md
+
+  .logo-container
+    flex-direction column
+    gap padding-xs
+
+    .logo-image
+      width 100px
+      height auto
+
+  .features
+    flex-direction column
+    gap padding-sm
+
+  .feature
+    flex-direction column
+    align-items center
+    width 90%
+    margin 0 auto
+
+    .feature-image
+      width 100px
+      height 100px
+
+    .feature-text
+      text-align center
+
+  .subscription
+    flex-direction column
+    gap padding-xs
+
+    input
+      width 100%
+      max-width 300px
+      margin 0 auto
+
+    button
+      width 100%
+      max-width 150px
+      margin 0 auto
+
+  .footer
+    flex-direction column
+    align-items center
+    gap padding-sm
+
+    .footer-list
+      text-align center
+
+@media (max-width: breakpoint-sm)
+  .logo-container
+    .logo-image
+      width 80px
+
+  .feature
+    .feature-image
+      width 80px
+      height 80px
+
+    .feature-text
+      font-size font-size-m
+
+  .subscription
+    input
+      font-size font-size-sm
+      padding padding-xs
+
+    button
+      font-size font-size-sm
+      padding padding-xs
+
+  .footer
+    .footer-list li
+      font-size font-size-sm
