@@ -11,27 +11,19 @@ $border-radius-base: 4px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 480px;
 
-@mixin border($width: 1px, $style: solid, $color: $color-border) {
+@mixin border($direction: 0, $width: 1px, $style: solid, $color: $color-border) {
   @if $style == none {
-    border: none;
+    @if $direction != 0 {
+      border-#{$direction}: none;
+    } @else {
+      border: none;
+    }
   } @else {
-    border: $width $style $color;
-  }
-}
-
-@mixin border-left($width: 1px, $style: solid, $color: $color-border) {
-  @if $style == none {
-    border-left: none;
-  } @else {
-    border-left: $width $style $color;
-  }
-}
-
-@mixin border-right($width: 1px, $style: solid, $color: $color-border) {
-  @if $style == none {
-    border-right: none;
-  } @else {
-    border-right: $width $style $color;
+    @if $direction != 0 {
+      border-#{$direction}: $width $style $color;
+    } @else {
+      border: $width $style $color;
+    }
   }
 }
 
@@ -46,14 +38,8 @@ $breakpoint-sm: 480px;
 }
 
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == md {
-    @media screen and (max-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == sm {
-    @media screen and (max-width: $breakpoint-sm) {
-      @content;
-    }
+  @media (max-width: $breakpoint) {
+    @content;
   }
 }
 
@@ -106,8 +92,8 @@ table {
   @include border();
 
   td {
-    @include border-left($style: none);
-    @include border-right($style: none);
+    @include border(left, 1px, none);
+    @include border(right, 1px, none);
   }
 }
 
@@ -117,15 +103,15 @@ table {
   td {
     text-align: center;
     font-weight: bold;
-    @include border-left($style: none);
-    @include border-right($style: none);
+    @include border(left, 1px, none);
+    @include border(right, 1px, none);
 
     &:first-child {
-      @include border-left();
+      @include border(left);
     }
 
     &:last-child {
-      @include border-right();
+      @include border(right);
     }
   }
 }
@@ -186,7 +172,7 @@ a {
   }
 }
 
-@include respond-to(md) {
+@include respond-to($breakpoint-md) {
   table,
   tbody,
   tr,
@@ -273,7 +259,7 @@ a {
   }
 }
 
-@include respond-to(sm) {
+@include respond-to($breakpoint-sm) {
   .search-bar {
     input {
       width: 90%;
