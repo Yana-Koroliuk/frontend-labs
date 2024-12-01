@@ -16,15 +16,15 @@ $padding-md: 20px;
 $border-radius-base: 5px;
 $breakpoint-md: 768px;
 
-@mixin border($direction: null, $width: 1px, $style: solid, $color: $color-border) {
+@mixin border($direction: 0, $width: 1px, $style: solid, $color: $color-border) {
   @if $style == none {
-    @if $direction != null {
+    @if $direction != 0 {
       border-#{$direction}: none;
     } @else {
       border: none;
     }
   } @else {
-    @if $direction != null {
+    @if $direction != 0 {
       border-#{$direction}: $width $style $color;
     } @else {
       border: $width $style $color;
@@ -113,7 +113,7 @@ body {
   .sidebar {
     background-color: $color-bg-light;
     padding: $padding-md;
-    @include border(1px, solid, $color-border);
+    @include border(0, 1px, solid, $color-border);
     width: 250px;
     box-sizing: border-box;
 
@@ -151,7 +151,7 @@ body {
       display: grid;
       grid-template-rows: auto 1fr auto;
       background-color: $color-bg-white;
-      @include border(1px, solid, $color-border);
+      @include border(0, 1px, solid, $color-border);
       @include border-radius();
       padding: $padding-base;
 
