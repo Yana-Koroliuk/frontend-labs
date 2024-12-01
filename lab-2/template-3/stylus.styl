@@ -68,7 +68,6 @@ a
 ul
   reset-list()
 
-// Header
 .header
   display flex
   justify-content space-between
@@ -265,3 +264,73 @@ ul
         li
           margin-bottom padding-xs
 
+@media (max-width: breakpoint-md)
+  .header
+    flex-direction column
+    align-items center
+
+    .register-button
+      margin-top padding-sm
+
+  .hero
+    .hero-container
+      flex-direction column
+      align-items center
+
+      .hero-text
+        text-align center
+        padding padding-lg
+
+        .hero-register-button
+          width 100%
+
+  .features
+    padding padding-lg padding-sm
+
+    .feature
+      flex 1 1 calc(100% - 40px)
+
+    .features-register-button
+      width 100%
+
+  .steps .step-list
+    flex-wrap wrap
+    justify-content center
+
+    .step
+      flex 1 1 calc(50% - 20px)
+
+      &:nth-child(4),
+      &:nth-child(5)
+        margin-left 0
+
+  .footer
+    flex-direction column
+    align-items center
+    text-align center
+
+    .footer-logo
+      margin-bottom padding-lg
+
+    .footer-section-wrapper
+      flex-direction column
+      gap padding-sm
+      align-items center
+
+      .footer-section
+        align-items center
+
+@media (max-width: breakpoint-sm)
+  .hero-text
+    h1
+      font-size font-size-lg
+
+    p
+      font-size font-size-base
+
+  .steps .step
+    flex 1 1 100%
+
+    &:nth-child(4),
+    &:nth-child(5)
+      margin-left 0
