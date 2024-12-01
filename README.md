@@ -1,6 +1,6 @@
 # frontend-labs
 
-## Lab 1 : description
+## Lab 1 : Description
 In folder lab-1 showcases implementations of various web layout techniques, including Table, Float, CSS Grid, and Flexbox. It aims to demonstrate the advantages, limitations, and appropriate use cases of each approach in web development. All layouts are responsive and designed to adapt seamlessly to different screen sizes.
 This repository in folder lab-1 includes several HTML and CSS implementations of web layouts designed to:
 
@@ -63,7 +63,7 @@ This repository in folder lab-1 includes several HTML and CSS implementations of
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Yana-Koroliuk/frontend-labs.git
    ```
 2. Open the desired HTML file in your browser:
    ```bash
@@ -92,3 +92,56 @@ This repository in folder lab-1 includes several HTML and CSS implementations of
 
 In modern web development, **CSS Grid** and **Flexbox** are the preferred choices due to their simplicity, flexibility, and adaptability to different screen sizes.
 
+## Lab 2: Description
+
+For all pages in lab-2, style compilation was set up using two different methods: Stylus and SASS.
+
+## Setup for Style Compilation
+### Stylus/SASS
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Yana-Koroliuk/frontend-labs.git
+   ```
+2. Install Stylus/SASS via npm:
+   ```bash
+   npm install stylus -g
+   ```
+   ```bash
+   npm install sass -g
+   ```
+3. Compile Stylus/SASS to CSS with the following command:
+   ```bash
+   stylus lab-2/template-1/stylus.styl -o lab-2/template-1/styles.css
+   ```
+   ```bash
+   sass lab-2/template-1/sass.scss lab-2/template-1/styles.css
+   ```
+   
+## Summary of CSS Preprocessors
+
+### Stylus
+
+#### Advantages
+- Compact and minimalistic syntax.
+- Offers flexibility through mixins, variables, and simple conditions.
+- Fast development for projects with straightforward structures.
+
+#### Disadvantages
+- Minimalistic nature can complicate collaboration and maintenance for larger teams.
+- Limited scalability for large projects due to less emphasis on structured organization.
+
+### SASS
+
+#### Advantages
+- Supports nested styles that align well with HTML structure.
+- Enables robust organization through strict syntax.
+- Provides mixins with parameters, conditional constructs, and other advanced features.
+- Better suited for scaling and integrating into large projects.
+
+#### Disadvantages
+- Requires more attention to syntax details compared to Stylus.
+- Overly deep nesting may reduce performance and readability.
+
+### General recommendation
+Stylus is ideal for small projects or rapid prototyping due to its concise syntax. However, for large-scale or long-term projects, SASS is a more powerful and organized tool, though it demands more effort in the initial setup.
